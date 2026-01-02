@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-// ============ SIGNATURE YANG KAMU MAU ============
+// ============ CORE NYA ============
 func decimalToBinaryIterative(n int) string {
 	if n == 0 {
 		return "0"
@@ -83,7 +83,7 @@ type Point struct {
 func measureTimeIterative(n int) int64 {
 	iterations := getIterations(n)
 
-	// Warm-up
+	
 	for i := 0; i < 1000; i++ {
 		decimalToBinaryIterative(n)
 	}
@@ -115,7 +115,7 @@ func measureTimeRecursive(n int) int64 {
 		iterations = 10000
 	}
 
-	// Warm-up
+	
 	for i := 0; i < 1000 && i < iterations; i++ {
 		decimalToBinaryRecursive(n)
 	}
@@ -332,3 +332,4 @@ func main() {
 	http.Handle("/", http.FileServer(http.Dir("./static")))
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
+
